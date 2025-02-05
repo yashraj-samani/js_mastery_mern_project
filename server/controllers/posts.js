@@ -13,7 +13,8 @@ export const getPosts = async (req, res) => {
 export const createPost = async (req, res) => {
   // with POST request, we have access to body
   const post = req.body;
-  const newPost = new PostMessgae(post);
+  const newPost = new PostMessage(post);
+
   try {
     await newPost.save();
     res.status(201).json(newPost);
