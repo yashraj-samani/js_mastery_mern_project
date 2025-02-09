@@ -7,7 +7,6 @@ import Form from "../Form/Form";
 
 const Home = () => {
   const [currentId, setCurrentId] = useState(0);
-  const classes = useStyles();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,7 +17,6 @@ const Home = () => {
     <Grow in>
       <Container>
         <Grid
-          className={classes.mainContainer}
           container
           justifyContent="space-between"
           alignItems="stretch"
