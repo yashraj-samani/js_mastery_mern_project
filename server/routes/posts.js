@@ -1,5 +1,6 @@
 import express from "express";
-
+import auth from "../middleware/auth.js";
+//to create post, like post u need to have your own id, you need to be logged in
 import {
   getPosts,
   createPost,
@@ -11,9 +12,9 @@ import {
 const router = express.Router();
 
 router.get("/", getPosts);
-router.post("/", createPost);
-router.patch("/:id", updatePost); //patch request to update existing documents
-router.delete("/:id", deletePost);
-router.patch("/:id/likePost", likePost);
+router.post("/", auth, createPost);
+router.patch("/:id", auth, updatePost); //managed on frontend
+router.delete("/:id", auth, deletePost); //managed on frontend
+router.patch("/:id/likePost", auth, likePost); // managed on the backend
 
 export default router;

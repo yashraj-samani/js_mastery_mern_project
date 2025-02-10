@@ -12,6 +12,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import useStyles from "./styles";
 import Input from "./Input";
 import { signin, signup } from "../../actions/auth";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 // import { GoogleLogin } from "react-google-login";
 // import Icon from "./Icon";
 
@@ -25,6 +27,9 @@ const initialState = {
 
 const Auth = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const [showPassword, setShowPassword] = useState(false);
 
   const [isSignUp, setIsSignUp] = useState(false);
@@ -50,7 +55,7 @@ const Auth = () => {
 
   const switchMode = () => {
     setIsSignUp((prevIsSignUp) => !prevIsSignUp);
-    handleShowPassword(false);
+    setShowPassword(false);
   };
 
   // const googleSuccess = async (res) => {
