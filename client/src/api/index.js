@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:5000" });
+const API = axios.create({
+  baseURL: "https://js-mastery-mern-project.onrender.com/",
+});
 
 // const url = "http://localhost:5000/posts";
 // // url pointing to our backend route
