@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://js-mastery-mern-project.onrender.com/",
+  baseURL: "https://js-mastery-mern-project-d0x7.onrender.com/",
 });
 
 // const url = "http://localhost:5000/posts";
